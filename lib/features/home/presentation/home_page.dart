@@ -25,7 +25,7 @@ class HomePage extends ConsumerWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => ref.read(homeCounterProvider.notifier).state++,
+        onPressed: () => ref.read(homeCounterProvider.notifier).increment(),
         tooltip: "Increment",
         child: const Icon(Icons.add),
       ),

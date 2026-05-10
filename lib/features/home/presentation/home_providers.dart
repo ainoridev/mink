@@ -1,4 +1,12 @@
 import "package:flutter_riverpod/flutter_riverpod.dart";
 
-/// Example state: replace with notifiers/use-cases wired from domain as features grow.
-final homeCounterProvider = StateProvider<int>((ref) => 0);
+/// Ejemplo de estado mutable: en features reales, preferir casos de uso en domain.
+final homeCounterProvider =
+    NotifierProvider<HomeCounterNotifier, int>(HomeCounterNotifier.new);
+
+class HomeCounterNotifier extends Notifier<int> {
+  @override
+  int build() => 0;
+
+  void increment() => state++;
+}

@@ -1,0 +1,13 @@
+---
+description: Mantener paquetes Dart/Flutter actualizados a la última versión estable
+alwaysApply: true
+---
+
+# Dependencias (última versión estable)
+
+- Al añadir o actualizar paquetes, usa la **última versión estable** publicada en pub.dev compatible con el `sdk` del [pubspec.yaml](mdc:pubspec.yaml).
+- Prefiere caret (`^`) en límites superiores que permitan parches y minors recientes; tras un bump mayor del ecosistema (p. ej. Riverpod 3), ajusta el código y ejecuta `flutter analyze` / `flutter test`.
+- Comandos habituales:
+  - `flutter pub upgrade --major-versions` — sube restricciones en `pubspec.yaml` a la última major resoluble.
+  - `flutter pub outdated` — ver qué queda bloqueado por el SDK de Flutter o por transitivas.
+- Si una transitiva no está en la última versión porque **Flutter** fija el árbol de `test`/`analyzer`, no uses `dependency_overrides` salvo necesidad documentada: el límite suele ser el toolchain, no el criterio del proyecto.

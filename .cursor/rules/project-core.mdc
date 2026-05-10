@@ -11,3 +11,4 @@ alwaysApply: true
 - No edites archivos generados (`*.g.dart`, etc.) a mano; regenera con `dart run build_runner build --delete-conflicting-outputs` cuando uses codegen.
 - Cambios pequeños y enfocados: no refactorizar código no relacionado con la tarea.
 - Tras cambios en lógica o comportamiento, ejecutar o proponer `flutter analyze` y `flutter test`.
+- **Dependencias**: mantener direct dependencies y dev_dependencies en la **última versión estable** compatible con el SDK del proyecto. Tras cambiar `pubspec.yaml`, ejecutar `flutter pub get`; de forma periódica o al cerrar deuda técnica, `flutter pub upgrade --major-versions` y corregir breaking changes. No fijar versiones antiguas sin ADR que lo justifique.

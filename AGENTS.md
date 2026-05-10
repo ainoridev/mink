@@ -13,9 +13,13 @@ Este repositorio es una app **Flutter** con **Clean Architecture por feature**, 
 
 ```bash
 flutter pub get
+flutter pub upgrade --major-versions
+flutter pub outdated
 flutter analyze
 flutter test
 ```
+
+Mantén dependencias en la **última versión estable** compatible con el SDK; revisa `flutter pub outdated` tras upgrades del toolchain.
 
 Codegen (cuando uses `riverpod_annotation` u otros generadores):
 
