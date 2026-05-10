@@ -1,0 +1,19 @@
+---
+description: Principios SOLID aplicados a Dart y Flutter en Mink
+globs: lib/**/*.dart
+alwaysApply: false
+---
+
+# SOLID (Dart / Flutter)
+
+- **S — Responsabilidad única**: un archivo/clase, un motivo para cambiar. Extrae widgets grandes; divide casos de uso si hacen más de una cosa cohesiva.
+- **O — Abierto/cerrado**: extiende comportamiento con nuevas implementaciones de interfaces (repositorios, estrategias) sin modificar código estable innecesariamente.
+- **L — Sustitución de Liskov**: las implementaciones deben cumplir el contrato de la abstracción en domain (no lanzar errores inesperados ni ignorar precondiciones).
+- **I — Segregación de interfaces**: interfaces pequeñas en domain; no obligues a los clientes a depender de métodos que no usan.
+- **D — Inversión de dependencias**: capas altas dependen de abstracciones (`abstract class` en domain), no de implementaciones concretas de infraestructura.
+
+## Antipatrones a evitar
+
+- “God widgets” con lógica de negocio y llamadas de red mezcladas.
+- Repositorios que devuelven DTOs a presentation (mapear a entidades en data).
+- Casos de uso que conocen `BuildContext` o widgets.

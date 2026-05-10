@@ -1,0 +1,30 @@
+---
+description: Clean Architecture, capas por feature y uso de Riverpod
+globs: lib/**/*.dart
+alwaysApply: false
+---
+
+# Arquitectura y Riverpod
+
+## Capas
+
+- **Domain**: entidades inmutables, interfaces de repositorio (`abstract`), casos de uso (una responsabilidad clara). Sin `flutter`, `dart:ui`, widgets ni Riverpod.
+- **Data**: implementaciones de repositorios, clientes HTTP/BD, DTOs y mappers (DTO ↔ entidad). Puede usar `dart:async`, paquetes de red/persistencia.
+- **Presentation**: widgets, páginas, **Riverpod** (`Provider`, `Notifier`, `AsyncNotifier`, etc.). Orquesta llamadas a casos de uso; la lógica de negocio vive en domain.
+
+## Riverpod
+
+- Providers y notifiers viven en `presentation/` (o subcarpeta `providers/` dentro del feature).
+- Inyecta dependencias vía constructores en casos de uso y repositorios; el grafo Riverpod compone implementaciones con interfaces de domain.
+- Evita acceso global a servicios concretos desde domain/data; usa abstracciones definidas en domain.
+
+## Modelos
+
+- **Entidad (domain)**: modelo del negocio, nombres de dominio.
+- **DTO (data)**: forma cruda de API/BD; mapper explícito hacia entidad.
+
+## Dependencias entre capas (permitido →)
+
+`presentation` → `domain`  
+`data` → `domain`  
+`core` puede ser usado por cualquier capa; no pongas reglas de negocio en `core` salvo utilidades verdaderamente transversales.

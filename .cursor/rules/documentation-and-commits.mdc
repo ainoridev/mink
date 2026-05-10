@@ -1,0 +1,22 @@
+---
+description: Documentación, ADR y mensajes de commit
+globs: docs/**/*
+alwaysApply: false
+---
+
+# Documentación y commits
+
+## Cuándo actualizar
+
+- Cambios de arquitectura, flujos entre capas o convenciones nuevas → `docs/ARCHITECTURE.md` o `docs/CONVENTIONS.md`.
+- Decisiones que afectan al producto a medio plazo → nuevo ADR en `docs/adr/` usando la plantilla `docs/adr/0000-template.md`.
+- Nuevo feature relevante → considera rellenar `docs/templates/feature-spec.md` y enlazarlo desde el PR.
+
+## Commits
+
+- Prefiere [Conventional Commits](https://www.conventionalcommits.org/) en español o inglés de forma consistente (`feat:`, `fix:`, `docs:`, `test:`, `refactor:`).
+- El cuerpo del commit puede explicar el “por qué” si no es obvio.
+
+## Markdown
+
+- Mantén títulos claros y secciones `<!-- RELLENAR -->` hasta completar plantillas.

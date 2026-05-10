@@ -1,0 +1,26 @@
+---
+description: TDD, tests y calidad en Mink
+globs: test/**/*.dart
+alwaysApply: false
+---
+
+# TDD y tests
+
+## Ciclo
+
+1. **Red**: escribe un test que falle (comportamiento deseado claro).
+2. **Green**: implementa lo mínimo para pasar.
+3. **Refactor**: mejora el diseño manteniendo los tests en verde.
+
+## Prioridad
+
+- Casos de uso y lógica de domain: **tests unitarios** primero (`mocktail` para dobles).
+- Providers/notifiers: tests que verifiquen estados y efectos sobre casos de uso fake/mock.
+- Widgets: tests de widget cuando hay ramas de UI relevantes o regresiones frecuentes.
+- Flujos críticos end-to-end: `integration_test` cuando el equipo los adopte (documentar en `docs/TESTING.md`).
+
+## Reglas
+
+- No merges de correcciones sin un test que reproduzca el bug cuando sea razonable.
+- Mantén tests **deterministas** (sin red real, reloj real ni aleatoriedad sin semilla).
+- Nombra tests describiendo comportamiento: `test("emite Failure cuando la red devuelve 500", ...)`.

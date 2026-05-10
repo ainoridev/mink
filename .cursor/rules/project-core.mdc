@@ -1,0 +1,13 @@
+---
+description: Convenciones globales del proyecto Mink (Flutter, estructura, IA)
+alwaysApply: true
+---
+
+# Proyecto Mink — reglas core
+
+- Respuestas y comentarios de código: **español** salvo que el equipo acuerde otro idioma para APIs públicas en inglés.
+- Respeta la estructura por features bajo `lib/features/<feature>/{domain,data,presentation}` y `lib/core/` solo para código transversal.
+- **No mezclar capas**: `domain` no importa Flutter ni `data`/`presentation`; `data` no importa `presentation`.
+- No edites archivos generados (`*.g.dart`, etc.) a mano; regenera con `dart run build_runner build --delete-conflicting-outputs` cuando uses codegen.
+- Cambios pequeños y enfocados: no refactorizar código no relacionado con la tarea.
+- Tras cambios en lógica o comportamiento, ejecutar o proponer `flutter analyze` y `flutter test`.
