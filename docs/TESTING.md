@@ -38,7 +38,7 @@
 
 ### Widget
 
-<!-- RELLENAR: cuándo exigir widget test en PR -->
+- Los tests de widget que montan widgets que usan `Supabase.instance` deben llamar antes a `initSupabaseForWidgetTests` (véase [test/widget_test.dart](../test/widget_test.dart)), que evita `SharedPreferences` y persistencia real.
 
 ## CI deseado (checklist)
 

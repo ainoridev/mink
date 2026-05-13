@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-import "package:mink/features/home/presentation/home_page.dart";
+import "package:mink/features/auth/presentation/auth_gate.dart";
 
 /// Root widget: keep thin; composition and routing evolve here.
 class MinkApp extends StatelessWidget {
@@ -14,7 +14,7 @@ class MinkApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const AuthGate(),
     );
   }
 }

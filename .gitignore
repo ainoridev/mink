@@ -31,6 +31,9 @@ migrate_working_dir/
 /build/
 coverage/
 
+# Supabase / env local (no versionar credenciales)
+assets/env/.env
+
 # Symbolication related
 app.*.symbols
 

@@ -41,11 +41,20 @@ flowchart TB
 
 | Feature | Responsabilidad |
 |---------|-----------------|
-| `home` | <!-- RELLENAR --> Pantalla inicial de ejemplo. |
+| `auth` | Login (email/contraseña), puerta de sesión (`AuthGate`). |
+| `home` | Pantalla principal de ejemplo tras sesión. |
+
+## Backend y datos (Supabase)
+
+- **BaaS**: [Supabase](https://supabase.com/) (Postgres + Auth + PostgREST).
+- **Cliente Flutter**: `supabase_flutter`; variables en `assets/env/.env` y/o `--dart-define` ([docs/SUPABASE.md](../SUPABASE.md)).
+- **ORM tipo Prisma/Drizzle**: solo en servicios **Node** si se añade backend; no en la app — [ADR 0001](adr/0001-supabase-cliente-sin-orm-prisma-drizzle.md).
 
 ## Navegación y rutas
 
 <!-- RELLENAR: paquete de rutas (go_router, auto_route, etc.) o navegación imperativa; mapa de pantallas -->
+
+Actualmente: `MaterialApp` con `home: AuthGate` — sesión en [`auth_gate.dart`](../lib/features/auth/presentation/auth_gate.dart) (login vs. home).
 
 ## Dependencias entre módulos
 
@@ -53,4 +62,5 @@ flowchart TB
 
 ## Seguridad y configuración
 
-<!-- RELLENAR: almacenamiento de secretos, entornos (dev/staging/prod), deep links -->
+- Supabase: solo **anon key** en cliente; sesión nativa en almacenamiento seguro; PKCE. Detalle en [docs/SUPABASE.md](../SUPABASE.md).
+- Secretos de CI: preferir `--dart-define-from-file` (archivo no versionado).

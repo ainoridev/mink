@@ -17,3 +17,9 @@ Los ADR documentan **decisiones de arquitectura** con contexto y consecuencias, 
 ## Plantilla
 
 Copia [0000-template.md](0000-template.md) y rellena todas las secciones.
+
+## Índice
+
+| ADR | Título |
+|-----|--------|
+| [0001](0001-supabase-cliente-sin-orm-prisma-drizzle.md) | Cliente Supabase en Flutter sin Prisma/Drizzle |

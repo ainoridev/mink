@@ -22,7 +22,13 @@ flutter analyze
 flutter test
 ```
 
-## Documentación
+## Supabase
 
-- Convenciones y arquitectura: [docs/README.md](docs/README.md)
-- Instrucciones para agentes e IA: [AGENTS.md](AGENTS.md)
+1. Copia la plantilla y rellena credenciales (el archivo real no se versiona):
+
+   ```bash
+   cp assets/env/.env.example assets/env/.env
+   ```
+
+2. Habilita el proveedor **Email** en el dashboard si usas login email/contraseña.
+3. Detalle y seguridad: [docs/SUPABASE.md](docs/SUPABASE.md).

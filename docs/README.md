@@ -7,6 +7,7 @@
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Capas, features, navegación, diagramas. |
 | [CONVENTIONS.md](CONVENTIONS.md) | Estilo Dart, nombres, errores, logging, i18n. |
 | [TESTING.md](TESTING.md) | TDD, tipos de test, mocks, CI deseado. |
+| [SUPABASE.md](SUPABASE.md) | Login, env, RLS, seguridad del cliente Supabase. |
 | [adr/](adr/README.md) | Decisiones de arquitectura (ADR). |
 | [templates/feature-spec.md](templates/feature-spec.md) | Plantilla para especificar un feature antes de implementar. |
 

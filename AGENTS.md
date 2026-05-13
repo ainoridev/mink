@@ -7,6 +7,7 @@ Este repositorio es una app **Flutter** con **Clean Architecture por feature**, 
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — capas, dependencias y diagramas (completar según evolucione el producto).
 - [docs/CONVENTIONS.md](docs/CONVENTIONS.md) — estilo, errores, i18n, etc.
 - [docs/TESTING.md](docs/TESTING.md) — pirámide de tests y flujo TDD.
+- [docs/SUPABASE.md](docs/SUPABASE.md) — variables, login, RLS y límites Prisma/Drizzle.
 - Reglas en [.cursor/rules/](.cursor/rules/) — aplican en Cursor según alcance (`alwaysApply` / `globs`).
 
 ## Comandos habituales
@@ -34,6 +35,7 @@ dart run build_runner build --delete-conflicting-outputs
 - Importar Flutter o Riverpod desde `domain` (salvo excepciones documentadas en ADR).
 - Editar a mano archivos `*.g.dart`.
 - Refactors masivos no solicitados mezclados con una corrección pequeña.
+- Añadir la **service role** de Supabase al cliente móvil o a repos públicos.
 
 ## Ramas y PRs
 
