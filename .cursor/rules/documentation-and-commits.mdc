@@ -14,7 +14,7 @@ alwaysApply: false
 
 ## Commits
 
-- Prefiere [Conventional Commits](https://www.conventionalcommits.org/) en español o inglés de forma consistente (`feat:`, `fix:`, `docs:`, `test:`, `refactor:`).
+- Prefiere [Conventional Commits](https://www.conventionalcommits.org/) en inglés de forma consistente (`feat:`, `fix:`, `docs:`, `test:`, `refactor:`).
 - El cuerpo del commit puede explicar el “por qué” si no es obvio.
 
 ## Markdown

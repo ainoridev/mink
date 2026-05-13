@@ -1,6 +1,6 @@
 # Arquitectura
 
-<!-- RELLENAR: breve descripción del producto en una frase -->
+**Mink — Gimnasio cognitivo** es una app móvil de aprendizaje tipo Duolingo que ofrece **pruebas gamificadas** para entrenar capacidades cognitivas (memoria, atención, etc.) con sesiones breves y progresión estructurada.
 
 ## Resumen
 
