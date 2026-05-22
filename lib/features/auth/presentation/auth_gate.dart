@@ -16,8 +16,15 @@ class AuthGate extends ConsumerWidget {
     return authAsync.when(
       data: (state) =>
           state.session != null ? const HomePage() : const LoginPage(),
-      loading: () =>
-          const Scaffold(body: Center(child: CircularProgressIndicator())),
+      loading: () => Scaffold(
+        backgroundColor: Colors.black,
+        body: Center(
+          child: Image.asset(
+            "assets/images/mink_logo.png",
+            width: 160,
+          ),
+        ),
+      ),
       error: (error, _) => Scaffold(
         body: Center(
           child: Padding(

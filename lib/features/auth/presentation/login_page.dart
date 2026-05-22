@@ -3,6 +3,8 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:supabase_flutter/supabase_flutter.dart";
 
 import "package:mink/features/auth/presentation/auth_providers.dart";
+import "package:mink/features/auth/presentation/forgot_password_page.dart";
+import "package:mink/features/auth/presentation/register_page.dart";
 
 class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
@@ -50,21 +52,27 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     final supabase = ref.watch(supabaseClientProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Iniciar sesión")),
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
           child: Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                Center(
+                  child: Image.asset(
+                    "assets/images/mink_logo.png",
+                    width: 120,
+                  ),
+                ),
+                const SizedBox(height: 32),
                 TextFormField(
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   autocorrect: false,
                   decoration: const InputDecoration(
-                    labelText: "Correo",
+                    labelText: "Email",
                     border: OutlineInputBorder(),
                   ),
                   validator: (value) {
@@ -92,16 +100,61 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 8),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: _loading
+                        ? null
+                        : () => Navigator.push<void>(
+                              context,
+                              MaterialPageRoute<void>(
+                                builder: (_) => const ForgotPasswordPage(),
+                              ),
+                            ),
+                    child: const Text("¿Olvidaste la contraseña?"),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                const Row(
+                  children: [
+                    Expanded(child: Divider()),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      child: Text("o"),
+                    ),
+                    Expanded(child: Divider()),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                const OutlinedButton(
+                  onPressed: null,
+                  child: Text("Login con Google"),
+                ),
+                const SizedBox(height: 16),
+                const Divider(),
+                const SizedBox(height: 8),
+                TextButton(
+                  onPressed: _loading
+                      ? null
+                      : () => Navigator.push<void>(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (_) => const RegisterPage(),
+                            ),
+                          ),
+                  child: const Text("No tengo usuario"),
+                ),
+                const SizedBox(height: 16),
                 FilledButton(
                   onPressed: _loading
                       ? null
                       : () => _submit(
-                          () => supabase.auth.signInWithPassword(
-                            email: _emailController.text.trim(),
-                            password: _passwordController.text,
+                            () => supabase.auth.signInWithPassword(
+                              email: _emailController.text.trim(),
+                              password: _passwordController.text,
+                            ),
                           ),
-                        ),
                   child: _loading
                       ? const SizedBox(
                           height: 22,
@@ -109,18 +162,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                           child: CircularProgressIndicator(strokeWidth: 2),
                         )
                       : const Text("Entrar"),
-                ),
-                const SizedBox(height: 12),
-                OutlinedButton(
-                  onPressed: _loading
-                      ? null
-                      : () => _submit(
-                          () => supabase.auth.signUp(
-                            email: _emailController.text.trim(),
-                            password: _passwordController.text,
-                          ),
-                        ),
-                  child: const Text("Crear cuenta"),
                 ),
               ],
             ),

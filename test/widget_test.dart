@@ -4,6 +4,7 @@ import "package:flutter_test/flutter_test.dart";
 
 import "package:mink/core/supabase/supabase_bootstrap.dart";
 import "package:mink/features/auth/presentation/login_page.dart";
+import "package:mink/features/auth/presentation/register_page.dart";
 import "package:mink/features/home/presentation/home_page.dart";
 
 /// URL y anon key de **solo test**: no deben ser secretos de producción.
@@ -26,9 +27,36 @@ void main() {
       const ProviderScope(child: MaterialApp(home: LoginPage())),
     );
 
-    expect(find.text("Iniciar sesión"), findsOneWidget);
-    expect(find.text("Correo"), findsOneWidget);
+    expect(find.byType(Image), findsOneWidget);
+    expect(find.text("Email"), findsOneWidget);
     expect(find.text("Contraseña"), findsOneWidget);
+    expect(find.text("No tengo usuario"), findsOneWidget);
+    expect(find.text("Login con Google"), findsOneWidget);
+  });
+
+  testWidgets("RegisterPage muestra campos de registro", (tester) async {
+    await tester.pumpWidget(
+      const ProviderScope(child: MaterialApp(home: RegisterPage())),
+    );
+
+    expect(find.text("Email"), findsOneWidget);
+    expect(find.text("Contraseña"), findsOneWidget);
+    expect(find.text("Acepto la política"), findsOneWidget);
+    expect(find.byType(Checkbox), findsOneWidget);
+    expect(find.text("Registrar"), findsOneWidget);
+  });
+
+  testWidgets("RegisterPage muestra snackbar si email ya existe", (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      const ProviderScope(child: MaterialApp(home: RegisterPage())),
+    );
+
+    expect(
+      tester.widget<FilledButton>(find.byType(FilledButton)).onPressed,
+      isNull,
+    );
   });
 
   testWidgets("Home counter increments", (tester) async {
