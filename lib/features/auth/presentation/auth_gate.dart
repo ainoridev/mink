@@ -19,10 +19,7 @@ class AuthGate extends ConsumerWidget {
       loading: () => Scaffold(
         backgroundColor: Colors.black,
         body: Center(
-          child: Image.asset(
-            "assets/images/mink_logo.png",
-            width: 160,
-          ),
+          child: Image.asset("assets/images/mink_logo.png", width: 160),
         ),
       ),
       error: (error, _) => Scaffold(

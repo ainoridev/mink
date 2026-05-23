@@ -4,6 +4,7 @@ import "package:supabase_flutter/supabase_flutter.dart";
 
 import "package:mink/features/auth/presentation/auth_providers.dart";
 import "package:mink/features/auth/presentation/email_confirmation_page.dart";
+import "package:mink/l10n/app_localizations.dart";
 
 class RegisterPage extends ConsumerStatefulWidget {
   const RegisterPage({super.key});
@@ -29,6 +30,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     final supabase = ref.watch(supabaseClientProvider);
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       body: SafeArea(
@@ -51,13 +53,13 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   autocorrect: false,
-                  decoration: const InputDecoration(
-                    labelText: "Email",
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n.emailLabel,
+                    border: const OutlineInputBorder(),
                   ),
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
-                      return "Introduce tu correo";
+                      return l10n.emailRequired;
                     }
                     return null;
                   },
@@ -66,16 +68,16 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                 TextFormField(
                   controller: _passwordController,
                   obscureText: true,
-                  decoration: const InputDecoration(
-                    labelText: "Contraseña",
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n.passwordLabel,
+                    border: const OutlineInputBorder(),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "Introduce la contraseña";
+                      return l10n.passwordRequired;
                     }
                     if (value.length < 6) {
-                      return "Mínimo 6 caracteres";
+                      return l10n.passwordMinLength;
                     }
                     return null;
                   },
@@ -91,7 +93,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                               () => _acceptedPolicy = value ?? false,
                             ),
                     ),
-                    const Text("Acepto la política"),
+                    Text(l10n.acceptPolicy),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -114,10 +116,8 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                             }
                             if (response.user?.identities?.isEmpty ?? true) {
                               messenger.showSnackBar(
-                                const SnackBar(
-                                  content: Text(
-                                    "Este email ya está registrado. Inicia sesión.",
-                                  ),
+                                SnackBar(
+                                  content: Text(l10n.emailAlreadyRegistered),
                                 ),
                               );
                               return;
@@ -134,11 +134,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                             );
                           } catch (_) {
                             messenger.showSnackBar(
-                              const SnackBar(
-                                content: Text(
-                                  "No se pudo completar la operación.",
-                                ),
-                              ),
+                              SnackBar(content: Text(l10n.operationFailed)),
                             );
                           } finally {
                             if (mounted) {
@@ -152,7 +148,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                           width: 22,
                           child: CircularProgressIndicator(strokeWidth: 2),
                         )
-                      : const Text("Registrar"),
+                      : Text(l10n.register),
                 ),
               ],
             ),

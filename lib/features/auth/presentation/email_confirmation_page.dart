@@ -1,11 +1,14 @@
 import "package:flutter/material.dart";
 
+import "package:mink/l10n/app_localizations.dart";
+
 class EmailConfirmationPage extends StatelessWidget {
   const EmailConfirmationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       body: SafeArea(
@@ -18,21 +21,17 @@ class EmailConfirmationPage extends StatelessWidget {
                 Image.asset("assets/images/mink_logo.png", width: 120),
                 const SizedBox(height: 32),
                 Text(
-                  "Revisa tu email",
+                  l10n.checkYourEmail,
                   style: theme.textTheme.titleLarge,
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 16),
-                const Text(
-                  "Te hemos enviado un enlace de confirmación. "
-                  "Actívalo para poder iniciar sesión.",
-                  textAlign: TextAlign.center,
-                ),
+                Text(l10n.confirmationSent, textAlign: TextAlign.center),
                 const SizedBox(height: 32),
                 FilledButton(
                   onPressed: () =>
                       Navigator.of(context).popUntil((route) => route.isFirst),
-                  child: const Text("Ya confirmé mi email"),
+                  child: Text(l10n.alreadyConfirmed),
                 ),
               ],
             ),
