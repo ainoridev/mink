@@ -1,10 +1,13 @@
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:supabase_flutter/supabase_flutter.dart";
+import "package:url_launcher/url_launcher.dart";
 
 import "package:mink/features/auth/presentation/auth_providers.dart";
 import "package:mink/features/auth/presentation/email_confirmation_page.dart";
 import "package:mink/l10n/app_localizations.dart";
+
+const _privacyPolicyUrl = "https://www.mink-app.com/politica-privacidad";
 
 class RegisterPage extends ConsumerStatefulWidget {
   const RegisterPage({super.key});
@@ -19,6 +22,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
   final _passwordController = TextEditingController();
   bool _loading = false;
   bool _acceptedPolicy = false;
+  bool _policyLinkOpened = false;
 
   @override
   void dispose() {
@@ -27,10 +31,27 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
     super.dispose();
   }
 
+  Future<void> _openPrivacyPolicy() async {
+    if (!_policyLinkOpened) {
+      setState(() => _policyLinkOpened = true);
+    }
+    final launched = await launchUrl(
+      Uri.parse(_privacyPolicyUrl),
+      mode: LaunchMode.externalApplication,
+    );
+    if (!launched && mounted) {
+      final l10n = AppLocalizations.of(context)!;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.operationFailed)));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final supabase = ref.watch(supabaseClientProvider);
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
 
     return Scaffold(
       body: SafeArea(
@@ -84,16 +105,28 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                 ),
                 const SizedBox(height: 16),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Checkbox(
                       value: _acceptedPolicy,
-                      onChanged: _loading
+                      onChanged: _loading || !_policyLinkOpened
                           ? null
                           : (value) => setState(
                               () => _acceptedPolicy = value ?? false,
                             ),
                     ),
-                    Text(l10n.acceptPolicy),
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: _loading ? null : _openPrivacyPolicy,
+                        child: Text(
+                          l10n.acceptPolicy,
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: theme.colorScheme.primary,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 16),

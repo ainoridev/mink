@@ -48,8 +48,13 @@ void main() {
 
     expect(find.text("Email"), findsOneWidget);
     expect(find.text("Password"), findsOneWidget);
-    expect(find.text("I accept the privacy policy"), findsOneWidget);
-    expect(find.byType(Checkbox), findsOneWidget);
+    final policyText = find.text("I accept the privacy policy");
+    expect(policyText, findsOneWidget);
+    expect(
+      find.ancestor(of: policyText, matching: find.byType(GestureDetector)),
+      findsOneWidget,
+    );
+    expect(tester.widget<Checkbox>(find.byType(Checkbox)).onChanged, isNull);
     expect(find.text("Register"), findsOneWidget);
   });
 
