@@ -3,6 +3,7 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:flutter_test/flutter_test.dart";
 
 import "package:mink/core/supabase/supabase_bootstrap.dart";
+import "package:mink/features/auth/presentation/forgot_password_page.dart";
 import "package:mink/features/auth/presentation/login_page.dart";
 import "package:mink/features/auth/presentation/register_page.dart";
 import "package:mink/features/home/presentation/home_page.dart";
@@ -56,6 +57,17 @@ void main() {
     );
     expect(tester.widget<Checkbox>(find.byType(Checkbox)).onChanged, isNull);
     expect(find.text("Register"), findsOneWidget);
+  });
+
+  testWidgets("ForgotPasswordPage muestra email y botón de envío", (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      ProviderScope(child: makeTestable(const ForgotPasswordPage())),
+    );
+
+    expect(find.text("Email"), findsOneWidget);
+    expect(find.text("Send reset link"), findsOneWidget);
   });
 
   testWidgets("RegisterPage muestra snackbar si email ya existe", (
