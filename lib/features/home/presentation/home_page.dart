@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
-import "package:supabase_flutter/supabase_flutter.dart";
 
 import "package:mink/features/home/presentation/home_providers.dart";
 
@@ -14,14 +13,7 @@ class HomePage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Mink"),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            tooltip: "Cerrar sesión",
-            onPressed: () => Supabase.instance.client.auth.signOut(),
-          ),
-        ],
+        title: const Text("Main"),
       ),
       body: Center(
         child: Column(

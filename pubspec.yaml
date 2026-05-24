@@ -18,6 +18,7 @@ dependencies:
   riverpod_annotation: ^4.0.2
   supabase_flutter: ^2.12.4
   url_launcher: ^6.3.0
+  phosphor_flutter: ^2.1.0
 
 
 dev_dependencies:
@@ -35,3 +36,25 @@ flutter:
     - assets/env/.env
     - assets/env/.env.example
     - assets/images/mink_logo.png
+    - assets/images/mink-hi.PNG
+    - assets/images/mink-love.PNG
+    - assets/images/mink-funny.PNG
+    - assets/images/mink-sad.PNG
+    - assets/images/mink-cry.PNG
+    - assets/images/mink-angry.PNG
+    - assets/images/mink-indifferent.PNG
+    - assets/icons/phosphor/currency-coin.svg
+    - assets/icons/phosphor/currency-diamond.svg
+  fonts:
+    - family: Fredoka
+      fonts:
+        - asset: assets/fonts/fredoka/static/Fredoka-Light.ttf
+          weight: 300
+        - asset: assets/fonts/fredoka/static/Fredoka-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/fredoka/static/Fredoka-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/fredoka/static/Fredoka-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/fredoka/static/Fredoka-Bold.ttf
+          weight: 700

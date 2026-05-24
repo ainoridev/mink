@@ -3,7 +3,7 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 
 import "package:mink/features/auth/presentation/auth_providers.dart";
 import "package:mink/features/auth/presentation/login_page.dart";
-import "package:mink/features/home/presentation/home_page.dart";
+import "package:mink/features/shell/presentation/main_shell.dart";
 
 /// Enruta entre sesión activa y pantalla de login según Supabase Auth.
 class AuthGate extends ConsumerStatefulWidget {
@@ -120,7 +120,7 @@ class _AuthGateState extends ConsumerState<AuthGate> {
           return _loadingScreen();
         }
 
-        return const HomePage();
+        return const MainShell();
       },
     );
   }
