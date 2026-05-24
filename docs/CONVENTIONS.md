@@ -35,3 +35,9 @@
 
 - Comenta el “por qué”, no el “qué” obvio.
 - Documenta APIs públicas de paquetes compartidos o casos de uso complejos.
+
+## UI y diseño
+
+- La referencia visual está en [`pencil-new.pen`](../pencil-new.pen); ver [DESIGN.md](DESIGN.md) para inventario de pantallas, tokens, assets y **lectura del diseño con MCP Pencil** (no inferir layout solo desde el JSON del `.pen`).
+- Fuente: **Fredoka** (`assets/fonts/fredoka/`). Colores y espaciado: tokens `$primary`, `$background`, etc. en DESIGN.md.
+- Iconos y mascota: `assets/images/icons/`, `assets/images/mink-*.png` (mismas rutas que en el diseño).

@@ -1,0 +1,46 @@
+---
+description: Diseño UI en pencil-new.pen — lectura vía MCP Pencil e implementación Flutter
+globs:
+  - pencil-new.pen
+  - lib/**/presentation/**
+  - lib/core/theme/**
+alwaysApply: false
+---
+
+# Diseño Pencil (`pencil-new.pen`)
+
+## Cuándo aplicar esta regla
+
+- Implementar o revisar **pantallas**, **theme**, **navegación** o **assets** de UI.
+- El usuario menciona Pencil, `.pen`, diseño, Figma-like, o una pantalla numerada (`06 Shop`, `17 Armario`, etc.).
+
+## Lectura obligatoria
+
+1. [docs/DESIGN.md](../../docs/DESIGN.md) — inventario de pantallas (node ids), tokens, assets, flujo MCP.
+2. Archivo de diseño: `pencil-new.pen` en la raíz del repo.
+
+## Cómo obtener diseño y composición (IA)
+
+**Usa el servidor MCP `user-highagency.pencildev-extension-pencil`**, no parses el árbol de nodos con herramientas de archivo salvo grep de ids/nombres.
+
+Orden típico:
+
+1. `get_variables` en `pencil-new.pen`
+2. `batch_get` del frame de pantalla (ver tabla en DESIGN.md, p. ej. `s1Xum` = Shop)
+3. `get_screenshot` del mismo node id
+4. `snapshot_layout` con `parentId` = frame de pantalla
+
+Para editar el `.pen`: solo `batch_design` / `replace_all_matching_properties` según descriptor MCP.
+
+## Implementación Flutter
+
+- Tipografía: **Fredoka** (`assets/fonts/fredoka/`), token `$font-main`.
+- Colores: variables del doc → `ThemeData` en `lib/core/theme/`.
+- Iconos de nav y monedas: `assets/images/icons/` (rutas en DESIGN.md).
+- Respeta shell vs modal vs flujo sesión según la tabla de DESIGN.md.
+
+## No hacer
+
+- Duplicar pantallas de tienda (una sola `06 Shop` con tabs Diaria/Mensual).
+- Inventar medidas sin contrastar `batch_get` o `snapshot_layout`.
+- Editar `pencil-new.pen` con StrReplace masivo salvo correcciones mecánicas acordadas (p. ej. tokens rotos); preferir MCP.
