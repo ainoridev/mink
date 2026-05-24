@@ -8,6 +8,7 @@ Este repositorio es una app **Flutter** con **Clean Architecture por feature**, 
 - [docs/CONVENTIONS.md](docs/CONVENTIONS.md) — estilo, errores, i18n, etc.
 - [docs/TESTING.md](docs/TESTING.md) — pirámide de tests y flujo TDD.
 - [docs/SUPABASE.md](docs/SUPABASE.md) — variables, login, RLS y límites Prisma/Drizzle.
+- [docs/DESIGN.md](docs/DESIGN.md) — diseño en `pencil-new.pen`: pantallas, tokens, assets y **cómo leer composición vía MCP Pencil**.
 - Reglas en [.cursor/rules/](.cursor/rules/) — aplican en Cursor según alcance (`alwaysApply` / `globs`).
 
 ## Comandos habituales

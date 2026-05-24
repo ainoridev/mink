@@ -17,7 +17,10 @@
 
 ## UI / pantallas
 
-<!-- RELLENAR: mockups, enlaces Figma, lista de rutas -->
+- **Diseño:** [`pencil-new.pen`](../../pencil-new.pen) — ver [DESIGN.md](../DESIGN.md) (node id del frame, p. ej. `s1Xum` = Shop).
+- **Pantalla Pencil:** <!-- RELLENAR: número y nombre, ej. 06 Shop → `s1Xum` -->
+- **Rutas Flutter:** <!-- RELLENAR: go_router / shell -->
+- **Captura de referencia:** usar MCP `get_screenshot` con el node id antes de implementar.
 
 ## Domain
 
