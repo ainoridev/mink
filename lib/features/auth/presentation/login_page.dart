@@ -3,6 +3,9 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:supabase_flutter/supabase_flutter.dart";
 
 import "package:mink/features/auth/presentation/auth_providers.dart";
+import "package:mink/features/auth/presentation/forgot_password_page.dart";
+import "package:mink/features/auth/presentation/register_page.dart";
+import "package:mink/l10n/app_localizations.dart";
 
 class LoginPage extends ConsumerStatefulWidget {
   const LoginPage({super.key});
@@ -30,14 +33,13 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     }
     setState(() => _loading = true);
     final messenger = ScaffoldMessenger.of(context);
+    final l10n = AppLocalizations.of(context)!;
     try {
       await action();
     } on AuthException catch (e) {
       messenger.showSnackBar(SnackBar(content: Text(e.message)));
     } catch (_) {
-      messenger.showSnackBar(
-        const SnackBar(content: Text("No se pudo completar la operación.")),
-      );
+      messenger.showSnackBar(SnackBar(content: Text(l10n.operationFailed)));
     } finally {
       if (mounted) {
         setState(() => _loading = false);
@@ -48,28 +50,32 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   @override
   Widget build(BuildContext context) {
     final supabase = ref.watch(supabaseClientProvider);
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Iniciar sesión")),
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
           child: Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                Center(
+                  child: Image.asset("assets/images/mink_logo.png", width: 120),
+                ),
+                const SizedBox(height: 32),
                 TextFormField(
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   autocorrect: false,
-                  decoration: const InputDecoration(
-                    labelText: "Correo",
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n.emailLabel,
+                    border: const OutlineInputBorder(),
                   ),
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
-                      return "Introduce tu correo";
+                      return l10n.emailRequired;
                     }
                     return null;
                   },
@@ -78,21 +84,66 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 TextFormField(
                   controller: _passwordController,
                   obscureText: true,
-                  decoration: const InputDecoration(
-                    labelText: "Contraseña",
-                    border: OutlineInputBorder(),
+                  decoration: InputDecoration(
+                    labelText: l10n.passwordLabel,
+                    border: const OutlineInputBorder(),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "Introduce la contraseña";
+                      return l10n.passwordRequired;
                     }
                     if (value.length < 6) {
-                      return "Mínimo 6 caracteres";
+                      return l10n.passwordMinLength;
                     }
                     return null;
                   },
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 8),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: _loading
+                        ? null
+                        : () => Navigator.push<void>(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (_) => const ForgotPasswordPage(),
+                            ),
+                          ),
+                    child: Text(l10n.forgotPassword),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    const Expanded(child: Divider()),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Text(l10n.orSeparator),
+                    ),
+                    const Expanded(child: Divider()),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                OutlinedButton(
+                  onPressed: null,
+                  child: Text(l10n.loginWithGoogle),
+                ),
+                const SizedBox(height: 16),
+                const Divider(),
+                const SizedBox(height: 8),
+                TextButton(
+                  onPressed: _loading
+                      ? null
+                      : () => Navigator.push<void>(
+                          context,
+                          MaterialPageRoute<void>(
+                            builder: (_) => const RegisterPage(),
+                          ),
+                        ),
+                  child: Text(l10n.noAccount),
+                ),
+                const SizedBox(height: 16),
                 FilledButton(
                   onPressed: _loading
                       ? null
@@ -108,19 +159,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                           width: 22,
                           child: CircularProgressIndicator(strokeWidth: 2),
                         )
-                      : const Text("Entrar"),
-                ),
-                const SizedBox(height: 12),
-                OutlinedButton(
-                  onPressed: _loading
-                      ? null
-                      : () => _submit(
-                          () => supabase.auth.signUp(
-                            email: _emailController.text.trim(),
-                            password: _passwordController.text,
-                          ),
-                        ),
-                  child: const Text("Crear cuenta"),
+                      : Text(l10n.signIn),
                 ),
               ],
             ),

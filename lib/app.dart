@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
+import "package:flutter_localizations/flutter_localizations.dart";
 
 import "package:mink/features/auth/presentation/auth_gate.dart";
+import "package:mink/l10n/app_localizations.dart";
 
 /// Root widget: keep thin; composition and routing evolve here.
 class MinkApp extends StatelessWidget {
@@ -14,6 +16,13 @@ class MinkApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [Locale("en")],
       home: const AuthGate(),
     );
   }
