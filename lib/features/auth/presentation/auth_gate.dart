@@ -1,8 +1,13 @@
+import "dart:async";
+
+import "package:app_links/app_links.dart";
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 
+import "package:mink/core/navigation/app_navigator.dart";
 import "package:mink/features/auth/presentation/auth_providers.dart";
 import "package:mink/features/auth/presentation/login_page.dart";
+import "package:mink/features/auth/presentation/reset_password_page.dart";
 import "package:mink/features/auth/presentation/terms_acceptance_page.dart";
 import "package:mink/features/shell/presentation/main_shell.dart";
 
@@ -19,6 +24,41 @@ class _AuthGateState extends ConsumerState<AuthGate> {
   bool _profileCheckDone = false;
   bool _profileCheckInFlight = false;
   bool _termsAccepted = false;
+  late final AppLinks _appLinks;
+  StreamSubscription<Uri>? _linkSubscription;
+
+  @override
+  void initState() {
+    super.initState();
+    _appLinks = AppLinks();
+    _linkSubscription = _appLinks.uriLinkStream.listen(_handleDeepLink);
+  }
+
+  @override
+  void dispose() {
+    _linkSubscription?.cancel();
+    super.dispose();
+  }
+
+  Future<void> _handleDeepLink(Uri uri) async {
+    if (uri.scheme != "com.mink.app") {
+      return;
+    }
+
+    final isRecovery =
+        uri.host == "reset-callback" ||
+        uri.queryParameters["type"] == "recovery" ||
+        uri.host != "login-callback";
+
+    final supabase = ref.read(supabaseClientProvider);
+    await supabase.auth.getSessionFromUrl(uri);
+
+    if (isRecovery) {
+      rootNavigatorKey.currentState?.push<void>(
+        MaterialPageRoute<void>(builder: (_) => const ResetPasswordPage()),
+      );
+    }
+  }
 
   Widget _loadingScreen() {
     return Scaffold(

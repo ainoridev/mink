@@ -56,6 +56,21 @@ class Env {
     );
   }
 
+  static String get appRedirectUrl {
+    const fromDefine = String.fromEnvironment("APP_REDIRECT_URL");
+    if (fromDefine.isNotEmpty) {
+      return fromDefine;
+    }
+    final fromFile = dotenv.env["APP_REDIRECT_URL"]?.trim();
+    if (fromFile != null && fromFile.isNotEmpty) {
+      return fromFile;
+    }
+    throw StateError(
+      "Falta APP_REDIRECT_URL. Usa --dart-define=APP_REDIRECT_URL=com.mink.app://login-callback "
+      "o rellena APP_REDIRECT_URL en assets/env/.env.",
+    );
+  }
+
   static String get googleWebClientId {
     const fromDefine = String.fromEnvironment("GOOGLE_WEB_CLIENT_ID");
     if (fromDefine.isNotEmpty) {

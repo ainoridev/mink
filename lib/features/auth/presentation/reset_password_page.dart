@@ -1,50 +1,47 @@
-import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:supabase_flutter/supabase_flutter.dart";
 
-import "package:mink/core/config/env.dart";
+import "package:mink/core/navigation/app_navigator.dart";
 import "package:mink/features/auth/presentation/auth_providers.dart";
 import "package:mink/l10n/app_localizations.dart";
 
-class ForgotPasswordPage extends ConsumerStatefulWidget {
-  const ForgotPasswordPage({super.key});
+class ResetPasswordPage extends ConsumerStatefulWidget {
+  const ResetPasswordPage({super.key});
 
   @override
-  ConsumerState<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
+  ConsumerState<ResetPasswordPage> createState() => _ResetPasswordPageState();
 }
 
-class _ForgotPasswordPageState extends ConsumerState<ForgotPasswordPage> {
+class _ResetPasswordPageState extends ConsumerState<ResetPasswordPage> {
   final _formKey = GlobalKey<FormState>();
-  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
   bool _loading = false;
 
   @override
   void dispose() {
-    _emailController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
     super.dispose();
   }
 
-  Future<void> _sendResetLink() async {
+  Future<void> _savePassword() async {
     if (!_formKey.currentState!.validate()) {
       return;
     }
     setState(() => _loading = true);
     final messenger = ScaffoldMessenger.of(context);
-    final navigator = Navigator.of(context);
     final l10n = AppLocalizations.of(context)!;
     final supabase = ref.read(supabaseClientProvider);
     try {
-      await supabase.auth.resetPasswordForEmail(
-        _emailController.text.trim(),
-        redirectTo: kIsWeb
-            ? "${Env.appUrl}/reset-password"
-            : Env.appRedirectUrl.replaceAll("login-callback", "reset-callback"),
+      await supabase.auth.updateUser(
+        UserAttributes(password: _passwordController.text),
       );
       messenger.showSnackBar(
-        SnackBar(content: Text(l10n.resetPasswordEmailSent)),
+        SnackBar(content: Text(l10n.passwordResetSuccess)),
       );
-      navigator.pop();
+      rootNavigatorKey.currentState?.popUntil((route) => route.isFirst);
     } on AuthException catch (e) {
       messenger.showSnackBar(SnackBar(content: Text(e.message)));
     } catch (_) {
@@ -59,7 +56,6 @@ class _ForgotPasswordPageState extends ConsumerState<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
 
     return Scaffold(
       body: SafeArea(
@@ -70,50 +66,55 @@ class _ForgotPasswordPageState extends ConsumerState<ForgotPasswordPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: BackButton(),
-                ),
                 Center(
                   child: Image.asset("assets/images/mink_logo.png", width: 120),
                 ),
                 const SizedBox(height: 32),
-                Text(
-                  l10n.forgotPasswordTitle,
-                  style: theme.textTheme.titleLarge,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  l10n.forgotPasswordDescription,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 32),
                 TextFormField(
-                  controller: _emailController,
-                  keyboardType: TextInputType.emailAddress,
-                  autocorrect: false,
+                  controller: _passwordController,
+                  obscureText: true,
                   decoration: InputDecoration(
-                    labelText: l10n.emailLabel,
+                    labelText: l10n.newPassword,
                     border: const OutlineInputBorder(),
                   ),
                   validator: (value) {
-                    if (value == null || value.trim().isEmpty) {
-                      return l10n.emailRequired;
+                    if (value == null || value.isEmpty) {
+                      return l10n.passwordRequired;
+                    }
+                    if (value.length < 6) {
+                      return l10n.passwordMinLength;
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _confirmPasswordController,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: l10n.confirmPassword,
+                    border: const OutlineInputBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return l10n.passwordRequired;
+                    }
+                    if (value != _passwordController.text) {
+                      return l10n.passwordsDoNotMatch;
                     }
                     return null;
                   },
                 ),
                 const SizedBox(height: 24),
                 FilledButton(
-                  onPressed: _loading ? null : _sendResetLink,
+                  onPressed: _loading ? null : _savePassword,
                   child: _loading
                       ? const SizedBox(
                           height: 22,
                           width: 22,
                           child: CircularProgressIndicator(strokeWidth: 2),
                         )
-                      : Text(l10n.sendResetLink),
+                      : Text(l10n.savePassword),
                 ),
               ],
             ),

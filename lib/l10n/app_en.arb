@@ -24,5 +24,10 @@
   "termsAcceptanceDescription": "You must accept the privacy policy to continue using the app.",
   "acceptAndContinue": "Accept and continue",
   "signOut": "Sign out",
+  "newPassword": "New password",
+  "confirmPassword": "Confirm password",
+  "passwordsDoNotMatch": "Passwords do not match",
+  "savePassword": "Save",
+  "passwordResetSuccess": "Your password has been updated.",
   "back": "Back"
 }

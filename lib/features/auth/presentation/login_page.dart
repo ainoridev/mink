@@ -57,7 +57,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     try {
       await supabase.auth.signInWithOAuth(
         OAuthProvider.google,
-        redirectTo: Env.appUrl,
+        redirectTo: kIsWeb ? Env.appUrl : Env.appRedirectUrl,
         queryParams: const {"access_type": "offline", "prompt": "consent"},
         authScreenLaunchMode: kIsWeb
             ? LaunchMode.platformDefault

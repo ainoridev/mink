@@ -86,5 +86,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signOut => 'Sign out';
 
   @override
+  String get newPassword => 'New password';
+
+  @override
+  String get confirmPassword => 'Confirm password';
+
+  @override
+  String get passwordsDoNotMatch => 'Passwords do not match';
+
+  @override
+  String get savePassword => 'Save';
+
+  @override
+  String get passwordResetSuccess => 'Your password has been updated.';
+
+  @override
   String get back => 'Back';
 }

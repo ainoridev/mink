@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:flutter_localizations/flutter_localizations.dart";
 
+import "package:mink/core/navigation/app_navigator.dart";
 import "package:mink/core/theme/app_theme.dart";
 import "package:mink/features/auth/presentation/auth_gate.dart";
 import "package:mink/l10n/app_localizations.dart";
@@ -12,6 +13,7 @@ class MinkApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: rootNavigatorKey,
       title: "Mink",
       theme: AppTheme.light(),
       localizationsDelegates: const [
