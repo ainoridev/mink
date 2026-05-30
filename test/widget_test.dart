@@ -39,7 +39,7 @@ void main() {
     expect(find.text("Email"), findsOneWidget);
     expect(find.text("Password"), findsOneWidget);
     expect(find.text("I don't have an account"), findsOneWidget);
-    expect(find.text("Login with Google"), findsOneWidget);
+    expect(find.text("Continue with Google"), findsOneWidget);
   });
 
   testWidgets("RegisterPage muestra campos de registro", (tester) async {

@@ -33,7 +33,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get orSeparator => 'or';
 
   @override
-  String get loginWithGoogle => 'Login with Google';
+  String get loginWithGoogle => 'Continue with Google';
 
   @override
   String get noAccount => 'I don\'t have an account';
@@ -74,6 +74,16 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get resetPasswordEmailSent =>
       'Check your email for a password reset link.';
+
+  @override
+  String get termsAcceptanceDescription =>
+      'You must accept the privacy policy to continue using the app.';
+
+  @override
+  String get acceptAndContinue => 'Accept and continue';
+
+  @override
+  String get signOut => 'Sign out';
 
   @override
   String get back => 'Back';

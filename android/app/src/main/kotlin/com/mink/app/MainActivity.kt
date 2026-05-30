@@ -1,4 +1,4 @@
-package com.mink.mink
+package com.mink.app
 
 import io.flutter.embedding.android.FlutterActivity
 

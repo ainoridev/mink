@@ -145,7 +145,7 @@ abstract class AppLocalizations {
   /// No description provided for @loginWithGoogle.
   ///
   /// In en, this message translates to:
-  /// **'Login with Google'**
+  /// **'Continue with Google'**
   String get loginWithGoogle;
 
   /// No description provided for @noAccount.
@@ -219,6 +219,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Check your email for a password reset link.'**
   String get resetPasswordEmailSent;
+
+  /// No description provided for @termsAcceptanceDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'You must accept the privacy policy to continue using the app.'**
+  String get termsAcceptanceDescription;
+
+  /// No description provided for @acceptAndContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Accept and continue'**
+  String get acceptAndContinue;
+
+  /// No description provided for @signOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get signOut;
 
   /// No description provided for @back.
   ///

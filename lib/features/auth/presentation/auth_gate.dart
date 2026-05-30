@@ -3,6 +3,7 @@ import "package:flutter_riverpod/flutter_riverpod.dart";
 
 import "package:mink/features/auth/presentation/auth_providers.dart";
 import "package:mink/features/auth/presentation/login_page.dart";
+import "package:mink/features/auth/presentation/terms_acceptance_page.dart";
 import "package:mink/features/shell/presentation/main_shell.dart";
 
 /// Enruta entre sesión activa y pantalla de login según Supabase Auth.
@@ -17,6 +18,7 @@ class _AuthGateState extends ConsumerState<AuthGate> {
   String? _activeUserId;
   bool _profileCheckDone = false;
   bool _profileCheckInFlight = false;
+  bool _termsAccepted = false;
 
   Widget _loadingScreen() {
     return Scaffold(
@@ -46,18 +48,15 @@ class _AuthGateState extends ConsumerState<AuthGate> {
           .eq("user_id", userId)
           .maybeSingle();
 
+      final termsAccepted = profile?["terms_accepted_at"] != null;
+
       if (!mounted || _activeUserId != userId) {
         return;
       }
 
-      if (profile != null && profile["terms_accepted_at"] == null) {
-        await supabase
-            .from("profiles")
-            .update({
-              "terms_accepted_at": DateTime.now().toUtc().toIso8601String(),
-            })
-            .eq("user_id", userId);
-      }
+      setState(() {
+        _termsAccepted = termsAccepted;
+      });
     } finally {
       if (mounted && _activeUserId == userId) {
         setState(() {
@@ -73,6 +72,7 @@ class _AuthGateState extends ConsumerState<AuthGate> {
       _activeUserId = null;
       _profileCheckDone = false;
       _profileCheckInFlight = false;
+      _termsAccepted = false;
     });
   }
 
@@ -118,6 +118,13 @@ class _AuthGateState extends ConsumerState<AuthGate> {
 
         if (!_profileCheckDone) {
           return _loadingScreen();
+        }
+
+        if (!_termsAccepted) {
+          return TermsAcceptancePage(
+            userId: userId,
+            onTermsAccepted: () => _ensureTermsAccepted(userId),
+          );
         }
 
         return const MainShell();

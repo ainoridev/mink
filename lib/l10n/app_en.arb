@@ -8,7 +8,7 @@
   "signIn": "Sign in",
   "forgotPassword": "Forgot your password?",
   "orSeparator": "or",
-  "loginWithGoogle": "Login with Google",
+  "loginWithGoogle": "Continue with Google",
   "noAccount": "I don't have an account",
   "register": "Register",
   "acceptPolicy": "I accept the privacy policy",
@@ -21,5 +21,8 @@
   "forgotPasswordDescription": "Enter your email and we will send you a link to reset your password.",
   "sendResetLink": "Send reset link",
   "resetPasswordEmailSent": "Check your email for a password reset link.",
+  "termsAcceptanceDescription": "You must accept the privacy policy to continue using the app.",
+  "acceptAndContinue": "Accept and continue",
+  "signOut": "Sign out",
   "back": "Back"
 }

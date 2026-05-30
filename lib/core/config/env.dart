@@ -40,4 +40,34 @@ class Env {
       "o rellena SUPABASE_ANON_KEY en assets/env/.env (véase docs/SUPABASE.md).",
     );
   }
+
+  static String get appUrl {
+    const fromDefine = String.fromEnvironment("APP_URL");
+    if (fromDefine.isNotEmpty) {
+      return fromDefine;
+    }
+    final fromFile = dotenv.env["APP_URL"]?.trim();
+    if (fromFile != null && fromFile.isNotEmpty) {
+      return fromFile;
+    }
+    throw StateError(
+      "Falta APP_URL. Usa --dart-define=APP_URL=https://tu-app.com "
+      "o rellena APP_URL en assets/env/.env.",
+    );
+  }
+
+  static String get googleWebClientId {
+    const fromDefine = String.fromEnvironment("GOOGLE_WEB_CLIENT_ID");
+    if (fromDefine.isNotEmpty) {
+      return fromDefine;
+    }
+    final fromFile = dotenv.env["GOOGLE_WEB_CLIENT_ID"]?.trim();
+    if (fromFile != null && fromFile.isNotEmpty) {
+      return fromFile;
+    }
+    throw StateError(
+      "Falta GOOGLE_WEB_CLIENT_ID. Usa --dart-define=GOOGLE_WEB_CLIENT_ID=xxx "
+      "o rellena GOOGLE_WEB_CLIENT_ID en assets/env/.env.",
+    );
+  }
 }

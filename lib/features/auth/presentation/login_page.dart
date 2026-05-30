@@ -1,7 +1,9 @@
+import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:supabase_flutter/supabase_flutter.dart";
 
+import "package:mink/core/config/env.dart";
 import "package:mink/features/auth/presentation/auth_providers.dart";
 import "package:mink/features/auth/presentation/forgot_password_page.dart";
 import "package:mink/features/auth/presentation/register_page.dart";
@@ -36,6 +38,31 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     final l10n = AppLocalizations.of(context)!;
     try {
       await action();
+    } on AuthException catch (e) {
+      messenger.showSnackBar(SnackBar(content: Text(e.message)));
+    } catch (_) {
+      messenger.showSnackBar(SnackBar(content: Text(l10n.operationFailed)));
+    } finally {
+      if (mounted) {
+        setState(() => _loading = false);
+      }
+    }
+  }
+
+  Future<void> _signInWithGoogle() async {
+    setState(() => _loading = true);
+    final messenger = ScaffoldMessenger.of(context);
+    final l10n = AppLocalizations.of(context)!;
+    final supabase = ref.read(supabaseClientProvider);
+    try {
+      await supabase.auth.signInWithOAuth(
+        OAuthProvider.google,
+        redirectTo: Env.appUrl,
+        queryParams: const {"access_type": "offline", "prompt": "consent"},
+        authScreenLaunchMode: kIsWeb
+            ? LaunchMode.platformDefault
+            : LaunchMode.externalApplication,
+      );
     } on AuthException catch (e) {
       messenger.showSnackBar(SnackBar(content: Text(e.message)));
     } catch (_) {
@@ -126,7 +153,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 ),
                 const SizedBox(height: 16),
                 OutlinedButton(
-                  onPressed: null,
+                  onPressed: _loading ? null : _signInWithGoogle,
                   child: Text(l10n.loginWithGoogle),
                 ),
                 const SizedBox(height: 16),
