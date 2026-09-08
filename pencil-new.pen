@@ -1,5 +1,5 @@
 {
-  "version": "2.11",
+  "version": "2.17",
   "children": [
     {
       "type": "frame",
@@ -251,12 +251,12 @@
                       "alignItems": "center",
                       "children": [
                         {
-                          "type": "icon_font",
+                          "type": "icon",
                           "id": "syo7d",
                           "width": 20,
                           "height": 20,
-                          "iconFontName": "star",
-                          "iconFontFamily": "Material Symbols Rounded",
+                          "icon": "star",
+                          "library": "Material Symbols Rounded",
                           "weight": 700,
                           "fill": "$coin-gold"
                         }
@@ -296,12 +296,12 @@
                       "alignItems": "center",
                       "children": [
                         {
-                          "type": "icon_font",
+                          "type": "icon",
                           "id": "os2rz",
                           "width": 20,
                           "height": 20,
-                          "iconFontName": "star",
-                          "iconFontFamily": "Material Symbols Rounded",
+                          "icon": "star",
+                          "library": "Material Symbols Rounded",
                           "weight": 400,
                           "fill": "#E5E0FA"
                         }
@@ -383,10 +383,9 @@
           "height": 844,
           "fill": "$background",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "\\$border-light"
-          },
+          "stroke": "\\$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -449,7 +448,7 @@
                   "id": "m0DQb",
                   "width": "fill_container",
                   "layout": "vertical",
-                  "gap": 8,
+                  "gap": 7,
                   "alignItems": "center",
                   "children": [
                     {
@@ -496,10 +495,9 @@
                       "width": "fill_container",
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "\\$border-light"
-                      },
+                      "stroke": "\\$border-light",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "gap": 14,
                       "padding": [
                         14,
@@ -549,10 +547,9 @@
                       "width": "fill_container",
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "\\$border-light"
-                      },
+                      "stroke": "\\$border-light",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "gap": 14,
                       "padding": [
                         14,
@@ -602,10 +599,9 @@
                       "width": "fill_container",
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "\\$border-light"
-                      },
+                      "stroke": "\\$border-light",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "gap": 14,
                       "padding": [
                         14,
@@ -707,10 +703,9 @@
                   "height": 52,
                   "fill": "$surface",
                   "cornerRadius": 16,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "$primary"
-                  },
+                  "stroke": "$primary",
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "justifyContent": "center",
                   "alignItems": "center",
@@ -739,10 +734,9 @@
           "height": 844,
           "fill": "$surface",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "\\$border-light"
-          },
+          "stroke": "\\$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -795,10 +789,9 @@
                   "height": 52,
                   "fill": "$background",
                   "cornerRadius": 14,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "\\$border-light"
-                  },
+                  "stroke": "\\$border-light",
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "padding": [
                     0,
@@ -824,10 +817,9 @@
                   "height": 52,
                   "fill": "$background",
                   "cornerRadius": 14,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "\\$border-light"
-                  },
+                  "stroke": "\\$border-light",
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "padding": [
                     0,
@@ -926,10 +918,9 @@
                   "height": 52,
                   "fill": "$surface",
                   "cornerRadius": 16,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "\\$border-light"
-                  },
+                  "stroke": "\\$border-light",
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner",
                   "gap": 8,
                   "justifyContent": "center",
                   "alignItems": "center",
@@ -967,10 +958,9 @@
           "height": 844,
           "fill": "$background",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "\\$border-light"
-          },
+          "stroke": "\\$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -1159,10 +1149,9 @@
                   "width": "fill_container",
                   "fill": "$surface",
                   "cornerRadius": 20,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "$primary"
-                  },
+                  "stroke": "$primary",
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 12,
                   "padding": 16,
@@ -1300,10 +1289,9 @@
                               "height": 28,
                               "fill": "$border-light",
                               "cornerRadius": 14,
-                              "stroke": {
-                                "thickness": 1.5,
-                                "fill": "$surface"
-                              },
+                              "stroke": "$surface",
+                              "strokeWidth": 1.5,
+                              "strokeAlignment": "inner",
                               "layout": "vertical",
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1859,10 +1847,9 @@
                                   "height": 80,
                                   "fill": "#1CB0F6",
                                   "cornerRadius": 40,
-                                  "stroke": {
-                                    "thickness": 5,
-                                    "fill": "#1899D6"
-                                  },
+                                  "stroke": "#1899D6",
+                                  "strokeWidth": 5,
+                                  "strokeAlignment": "inner",
                                   "layout": "vertical",
                                   "justifyContent": "center",
                                   "alignItems": "center",
@@ -1884,10 +1871,9 @@
                               "id": "jejU7",
                               "fill": "$surface",
                               "cornerRadius": 12,
-                              "stroke": {
-                                "thickness": 2,
-                                "fill": "#1CB0F6"
-                              },
+                              "stroke": "#1CB0F6",
+                              "strokeWidth": 2,
+                              "strokeAlignment": "inner",
                               "layout": "vertical",
                               "padding": [
                                 8,
@@ -1935,10 +1921,9 @@
                               "height": 72,
                               "fill": "$surface",
                               "cornerRadius": 36,
-                              "stroke": {
-                                "thickness": 2,
-                                "fill": "\\$border-light"
-                              },
+                              "stroke": "\\$border-light",
+                              "strokeWidth": 2,
+                              "strokeAlignment": "inner",
                               "layout": "vertical",
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -1984,10 +1969,9 @@
                               "height": 72,
                               "fill": "$tertiary-light",
                               "cornerRadius": 36,
-                              "stroke": {
-                                "thickness": 2,
-                                "fill": "$tertiary"
-                              },
+                              "stroke": "$tertiary",
+                              "strokeWidth": 2,
+                              "strokeAlignment": "inner",
                               "layout": "vertical",
                               "justifyContent": "center",
                               "alignItems": "center",
@@ -2030,10 +2014,9 @@
                   "id": "L9RLZ",
                   "fill": "$surface",
                   "cornerRadius": 20,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "\\$border-light"
-                  },
+                  "stroke": "\\$border-light",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "effect": {
                     "type": "shadow",
                     "shadowType": "outer",
@@ -2102,12 +2085,12 @@
               "width": "fill_container",
               "height": 80,
               "fill": "$surface",
-              "stroke": {
-                "thickness": {
-                  "top": 1
-                },
-                "fill": "\\$border-light"
+              "stroke": "\\$border-light",
+              "strokeWidth": {
+                "top": 1
               },
+              "strokeAlignment": "inner",
+              "strokeLinejoin": "round",
               "padding": [
                 8,
                 16,
@@ -2223,10 +2206,9 @@
           "height": 844,
           "fill": "$surface",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "\\$border-light"
-          },
+          "stroke": "\\$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -2401,10 +2383,9 @@
                       "height": 64,
                       "fill": "$background",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "\\$border-light"
-                      },
+                      "stroke": "\\$border-light",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -2427,10 +2408,9 @@
                       "height": 64,
                       "fill": "$background",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "\\$border-light"
-                      },
+                      "stroke": "\\$border-light",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -2453,10 +2433,9 @@
                       "height": 64,
                       "fill": "$memory-purple",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 3,
-                        "fill": "$primary-dark"
-                      },
+                      "stroke": "$primary-dark",
+                      "strokeWidth": 3,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -2479,10 +2458,9 @@
                       "height": 64,
                       "fill": "$background",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "\\$border-light"
-                      },
+                      "stroke": "\\$border-light",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -2505,10 +2483,9 @@
                       "height": 64,
                       "fill": "$background",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "\\$border-light"
-                      },
+                      "stroke": "\\$border-light",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -2563,10 +2540,9 @@
                       "height": 56,
                       "fill": "$background",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "\\$border-light"
-                      },
+                      "stroke": "\\$border-light",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -2589,10 +2565,9 @@
                       "height": 56,
                       "fill": "\\$secondary-light",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 3,
-                        "fill": "$cta-green"
-                      },
+                      "stroke": "$cta-green",
+                      "strokeWidth": 3,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -2615,10 +2590,9 @@
                       "height": 56,
                       "fill": "$background",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "\\$border-light"
-                      },
+                      "stroke": "\\$border-light",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -2641,10 +2615,9 @@
                       "height": 56,
                       "fill": "$background",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "\\$border-light"
-                      },
+                      "stroke": "\\$border-light",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -2707,10 +2680,9 @@
           "height": 844,
           "fill": "$background",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "\\$border-light"
-          },
+          "stroke": "\\$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -2766,10 +2738,9 @@
                   "width": "fill_container",
                   "fill": "$surface",
                   "cornerRadius": 16,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "$secondary"
-                  },
+                  "stroke": "$secondary",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 8,
                   "padding": 16,
@@ -2803,10 +2774,9 @@
                   "width": "fill_container",
                   "fill": "$tertiary-light",
                   "cornerRadius": 12,
-                  "stroke": {
-                    "thickness": 1,
-                    "fill": "$tertiary"
-                  },
+                  "stroke": "$tertiary",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "gap": 8,
                   "padding": 12,
                   "alignItems": "center",
@@ -3099,10 +3069,9 @@
                       "height": 48,
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "$secondary"
-                      },
+                      "stroke": "$secondary",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "justifyContent": "center",
                       "alignItems": "center",
@@ -3133,10 +3102,9 @@
           "height": 844,
           "fill": "$background",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "\\$border-light"
-          },
+          "stroke": "\\$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -3161,10 +3129,9 @@
                   "height": 88,
                   "fill": "$surface",
                   "cornerRadius": 44,
-                  "stroke": {
-                    "thickness": 3,
-                    "fill": "$text-white"
-                  },
+                  "stroke": "$text-white",
+                  "strokeWidth": 3,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "justifyContent": "center",
                   "alignItems": "center",
@@ -3343,10 +3310,9 @@
                   "width": "fill_container",
                   "fill": "$surface",
                   "cornerRadius": 20,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "\\$border-light"
-                  },
+                  "stroke": "\\$border-light",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 12,
                   "padding": 20,
@@ -3515,10 +3481,9 @@
                   "width": "fill_container",
                   "fill": "$surface",
                   "cornerRadius": 20,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "\\$border-light"
-                  },
+                  "stroke": "\\$border-light",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 12,
                   "padding": 20,
@@ -3821,10 +3786,9 @@
                       "type": "frame",
                       "id": "livUq",
                       "width": "fill_container",
-                      "stroke": {
-                        "thickness": 1,
-                        "fill": "$border-light"
-                      },
+                      "stroke": "$border-light",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "gap": 12,
                       "alignItems": "center",
                       "children": [
@@ -4042,12 +4006,12 @@
               "width": "fill_container",
               "height": 80,
               "fill": "$surface",
-              "stroke": {
-                "thickness": {
-                  "top": 1
-                },
-                "fill": "\\$border-light"
+              "stroke": "\\$border-light",
+              "strokeWidth": {
+                "top": 1
               },
+              "strokeAlignment": "inner",
+              "strokeLinejoin": "round",
               "padding": [
                 8,
                 16,
@@ -4163,10 +4127,9 @@
           "height": 844,
           "fill": "$background",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "\\$border-light"
-          },
+          "stroke": "\\$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -4334,10 +4297,9 @@
                   "height": 64,
                   "fill": "$secondary-light",
                   "cornerRadius": 16,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "$secondary"
-                  },
+                  "stroke": "$secondary",
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner",
                   "gap": 12,
                   "padding": [
                     12,
@@ -4434,10 +4396,9 @@
                       "id": "pd13D",
                       "fill": "$tertiary-light",
                       "cornerRadius": 12,
-                      "stroke": {
-                        "thickness": 1,
-                        "fill": "$tertiary"
-                      },
+                      "stroke": "$tertiary",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "padding": [
                         6,
                         10
@@ -4477,10 +4438,9 @@
                       "width": "fill_container",
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "$border-light"
-                      },
+                      "stroke": "$border-light",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "gap": 6,
                       "padding": 12,
@@ -4498,10 +4458,9 @@
                               "id": "voiRG",
                               "fill": "$background",
                               "cornerRadius": 8,
-                              "stroke": {
-                                "thickness": 1,
-                                "fill": "$border-light"
-                              },
+                              "stroke": "$border-light",
+                              "strokeWidth": 1,
+                              "strokeAlignment": "inner",
                               "padding": [
                                 3,
                                 7
@@ -4577,10 +4536,9 @@
                           "id": "tp1Sb",
                           "fill": "$background",
                           "cornerRadius": 10,
-                          "stroke": {
-                            "thickness": 1,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "gap": 4,
                           "padding": [
                             5,
@@ -4619,10 +4577,9 @@
                       "width": "fill_container",
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "$border-light"
-                      },
+                      "stroke": "$border-light",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "gap": 6,
                       "padding": 12,
@@ -4640,10 +4597,9 @@
                               "id": "Yfl46",
                               "fill": "$background",
                               "cornerRadius": 8,
-                              "stroke": {
-                                "thickness": 1,
-                                "fill": "$border-light"
-                              },
+                              "stroke": "$border-light",
+                              "strokeWidth": 1,
+                              "strokeAlignment": "inner",
                               "padding": [
                                 3,
                                 7
@@ -4719,10 +4675,9 @@
                           "id": "rCAbK",
                           "fill": "$background",
                           "cornerRadius": 10,
-                          "stroke": {
-                            "thickness": 1,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "gap": 4,
                           "padding": [
                             5,
@@ -4769,10 +4724,9 @@
                       "width": "fill_container",
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "$border-light"
-                      },
+                      "stroke": "$border-light",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "gap": 6,
                       "padding": 12,
@@ -4790,10 +4744,9 @@
                               "id": "h18mue",
                               "fill": "$background",
                               "cornerRadius": 8,
-                              "stroke": {
-                                "thickness": 1,
-                                "fill": "$border-light"
-                              },
+                              "stroke": "$border-light",
+                              "strokeWidth": 1,
+                              "strokeAlignment": "inner",
                               "padding": [
                                 3,
                                 7
@@ -4869,10 +4822,9 @@
                           "id": "MwC8A",
                           "fill": "$background",
                           "cornerRadius": 10,
-                          "stroke": {
-                            "thickness": 1,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "gap": 4,
                           "padding": [
                             5,
@@ -4911,10 +4863,9 @@
                       "width": "fill_container",
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "$primary"
-                      },
+                      "stroke": "$primary",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "layout": "vertical",
                       "gap": 6,
                       "padding": 12,
@@ -4932,10 +4883,9 @@
                               "id": "tNvAd",
                               "fill": "$background",
                               "cornerRadius": 8,
-                              "stroke": {
-                                "thickness": 1,
-                                "fill": "$border-light"
-                              },
+                              "stroke": "$border-light",
+                              "strokeWidth": 1,
+                              "strokeAlignment": "inner",
                               "padding": [
                                 3,
                                 7
@@ -5011,10 +4961,9 @@
                           "id": "mrX0i",
                           "fill": "$primary",
                           "cornerRadius": 10,
-                          "stroke": {
-                            "thickness": 1,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "gap": 4,
                           "padding": [
                             5,
@@ -5058,12 +5007,12 @@
               "width": "fill_container",
               "height": 80,
               "fill": "$surface",
-              "stroke": {
-                "thickness": {
-                  "top": 1
-                },
-                "fill": "\\$border-light"
+              "stroke": "\\$border-light",
+              "strokeWidth": {
+                "top": 1
               },
+              "strokeAlignment": "inner",
+              "strokeLinejoin": "round",
               "padding": [
                 8,
                 16,
@@ -5179,10 +5128,9 @@
           "height": 844,
           "fill": "$background",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "$border-light"
-          },
+          "stroke": "$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -5205,10 +5153,9 @@
                   "height": 36,
                   "fill": "$surface",
                   "cornerRadius": 18,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "$border-light"
-                  },
+                  "stroke": "$border-light",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "justifyContent": "center",
                   "alignItems": "center",
@@ -5274,10 +5221,7 @@
                         "url": "images/mink-love.png",
                         "mode": "fill"
                       },
-                      "cornerRadius": 80,
-                      "stroke": {
-                        "thickness": 4
-                      }
+                      "cornerRadius": 80
                     },
                     {
                       "type": "text",
@@ -5302,10 +5246,9 @@
                           "height": 72,
                           "fill": "$tertiary-light",
                           "cornerRadius": 12,
-                          "stroke": {
-                            "thickness": 1.5,
-                            "fill": "$primary"
-                          },
+                          "stroke": "$primary",
+                          "strokeWidth": 1.5,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 4,
                           "padding": [
@@ -5344,10 +5287,9 @@
                           "height": 72,
                           "fill": "$tertiary-light",
                           "cornerRadius": 12,
-                          "stroke": {
-                            "thickness": 1.5,
-                            "fill": "$primary"
-                          },
+                          "stroke": "$primary",
+                          "strokeWidth": 1.5,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 4,
                           "padding": [
@@ -5386,10 +5328,9 @@
                           "height": 72,
                           "fill": "$tertiary-light",
                           "cornerRadius": 12,
-                          "stroke": {
-                            "thickness": 1.5,
-                            "fill": "$primary"
-                          },
+                          "stroke": "$primary",
+                          "strokeWidth": 1.5,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 4,
                           "padding": [
@@ -5428,10 +5369,9 @@
                           "height": 72,
                           "fill": "$tertiary-light",
                           "cornerRadius": 12,
-                          "stroke": {
-                            "thickness": 1.5,
-                            "fill": "$primary"
-                          },
+                          "stroke": "$primary",
+                          "strokeWidth": 1.5,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "gap": 4,
                           "padding": [
@@ -5491,10 +5431,9 @@
                       "height": 64,
                       "fill": "$surface",
                       "cornerRadius": 14,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "$primary"
-                      },
+                      "stroke": "$primary",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "gap": 10,
                       "padding": [
                         10,
@@ -5568,10 +5507,9 @@
                       "height": 64,
                       "fill": "$surface",
                       "cornerRadius": 14,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "$primary"
-                      },
+                      "stroke": "$primary",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "gap": 10,
                       "padding": [
                         10,
@@ -5645,10 +5583,9 @@
                       "height": 64,
                       "fill": "$surface",
                       "cornerRadius": 14,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "$primary"
-                      },
+                      "stroke": "$primary",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "gap": 10,
                       "padding": [
                         10,
@@ -5722,10 +5659,9 @@
                       "height": 64,
                       "fill": "$surface",
                       "cornerRadius": 14,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "$primary"
-                      },
+                      "stroke": "$primary",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "gap": 10,
                       "padding": [
                         10,
@@ -5799,10 +5735,9 @@
                       "height": 64,
                       "fill": "$surface",
                       "cornerRadius": 14,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "$border-light"
-                      },
+                      "stroke": "$border-light",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "gap": 10,
                       "padding": [
                         10,
@@ -5897,10 +5832,9 @@
           "height": 844,
           "fill": "$background",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "$border-light"
-          },
+          "stroke": "$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -5921,10 +5855,9 @@
                   "height": 36,
                   "fill": "$surface",
                   "cornerRadius": 18,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "$border-light"
-                  },
+                  "stroke": "$border-light",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "justifyContent": "center",
                   "alignItems": "center",
@@ -5989,10 +5922,9 @@
                       "height": 76,
                       "fill": "$tertiary-light",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "$tertiary"
-                      },
+                      "stroke": "$tertiary",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "gap": 12,
                       "padding": [
                         12,
@@ -6106,10 +6038,9 @@
                       "height": 76,
                       "fill": "$secondary-light",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "$secondary"
-                      },
+                      "stroke": "$secondary",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "gap": 12,
                       "padding": [
                         12,
@@ -6223,10 +6154,9 @@
                       "height": 76,
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "$diamond-blue"
-                      },
+                      "stroke": "$diamond-blue",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "gap": 12,
                       "padding": [
                         12,
@@ -6340,10 +6270,9 @@
                       "height": 76,
                       "fill": "#F0EDFA",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "$border-light"
-                      },
+                      "stroke": "$border-light",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "gap": 12,
                       "padding": [
                         12,
@@ -6444,10 +6373,9 @@
           "height": 844,
           "fill": "$background",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "$border-light"
-          },
+          "stroke": "$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -6468,10 +6396,9 @@
                   "height": 36,
                   "fill": "$surface",
                   "cornerRadius": 18,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "$border-light"
-                  },
+                  "stroke": "$border-light",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "justifyContent": "center",
                   "alignItems": "center",
@@ -6536,10 +6463,9 @@
                       "height": 80,
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "$border-light"
-                      },
+                      "stroke": "$border-light",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "padding": [
                         14,
                         18
@@ -6563,9 +6489,6 @@
                           "height": 64,
                           "fill": "$tertiary",
                           "cornerRadius": 14,
-                          "stroke": {
-                            "thickness": 0
-                          },
                           "layout": "vertical",
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -6593,10 +6516,9 @@
                       "height": 80,
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "$border-light"
-                      },
+                      "stroke": "$border-light",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "padding": [
                         14,
                         18
@@ -6620,9 +6542,6 @@
                           "height": 64,
                           "fill": "$tertiary",
                           "cornerRadius": 14,
-                          "stroke": {
-                            "thickness": 0
-                          },
                           "layout": "vertical",
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -6650,10 +6569,9 @@
                       "height": 80,
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "$border-light"
-                      },
+                      "stroke": "$border-light",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "padding": [
                         14,
                         18
@@ -6677,10 +6595,9 @@
                           "height": 64,
                           "fill": "$surface",
                           "cornerRadius": 14,
-                          "stroke": {
-                            "thickness": 2,
-                            "fill": "$tertiary"
-                          },
+                          "stroke": "$tertiary",
+                          "strokeWidth": 2,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -6725,10 +6642,9 @@
                       "height": 80,
                       "fill": "$surface",
                       "cornerRadius": 16,
-                      "stroke": {
-                        "thickness": 1.5,
-                        "fill": "$border-light"
-                      },
+                      "stroke": "$border-light",
+                      "strokeWidth": 1.5,
+                      "strokeAlignment": "inner",
                       "padding": [
                         14,
                         18
@@ -6752,10 +6668,9 @@
                           "height": 64,
                           "fill": "$surface",
                           "cornerRadius": 14,
-                          "stroke": {
-                            "thickness": 2,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 2,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -6810,10 +6725,9 @@
                       "height": 96,
                       "fill": "#FFF8E1",
                       "cornerRadius": 18,
-                      "stroke": {
-                        "thickness": 2,
-                        "fill": "$coin-gold"
-                      },
+                      "stroke": "$coin-gold",
+                      "strokeWidth": 2,
+                      "strokeAlignment": "inner",
                       "padding": [
                         16,
                         20
@@ -6971,10 +6885,9 @@
           "height": 844,
           "fill": "$background",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "$border-light"
-          },
+          "stroke": "$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -7041,10 +6954,9 @@
                   "width": "fill_container",
                   "fill": "$surface",
                   "cornerRadius": 16,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "$border-light"
-                  },
+                  "stroke": "$border-light",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 10,
                   "padding": 12,
@@ -7087,10 +6999,9 @@
                           "height": 36,
                           "fill": "$background",
                           "cornerRadius": 10,
-                          "stroke": {
-                            "thickness": 1,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -7113,10 +7024,9 @@
                           "height": 36,
                           "fill": "$background",
                           "cornerRadius": 10,
-                          "stroke": {
-                            "thickness": 1,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -7164,10 +7074,9 @@
                   "width": "fill_container",
                   "fill": "$surface",
                   "cornerRadius": 16,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "$border-light"
-                  },
+                  "stroke": "$border-light",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 10,
                   "padding": 12,
@@ -7210,10 +7119,9 @@
                           "height": 36,
                           "fill": "$background",
                           "cornerRadius": 10,
-                          "stroke": {
-                            "thickness": 1,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -7258,10 +7166,9 @@
                           "height": 36,
                           "fill": "$background",
                           "cornerRadius": 10,
-                          "stroke": {
-                            "thickness": 1,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -7287,10 +7194,9 @@
                   "width": "fill_container",
                   "fill": "$surface",
                   "cornerRadius": 16,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "$border-light"
-                  },
+                  "stroke": "$border-light",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 10,
                   "padding": 12,
@@ -7333,10 +7239,9 @@
                           "height": 36,
                           "fill": "$background",
                           "cornerRadius": 10,
-                          "stroke": {
-                            "thickness": 1,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -7359,10 +7264,9 @@
                           "height": 36,
                           "fill": "$background",
                           "cornerRadius": 10,
-                          "stroke": {
-                            "thickness": 1,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -7410,10 +7314,9 @@
                   "width": "fill_container",
                   "fill": "$surface",
                   "cornerRadius": 16,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "$border-light"
-                  },
+                  "stroke": "$border-light",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 10,
                   "padding": 12,
@@ -7461,10 +7364,9 @@
                           "height": 36,
                           "fill": "$background",
                           "cornerRadius": 10,
-                          "stroke": {
-                            "thickness": 1,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -7509,10 +7411,9 @@
                           "height": 36,
                           "fill": "$background",
                           "cornerRadius": 10,
-                          "stroke": {
-                            "thickness": 1,
-                            "fill": "$border-light"
-                          },
+                          "stroke": "$border-light",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "layout": "vertical",
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -7628,10 +7529,9 @@
           "height": 844,
           "fill": "$surface",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "$border-light"
-          },
+          "stroke": "$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "alignItems": "center",
           "children": [
@@ -7698,10 +7598,9 @@
                   "height": 140,
                   "fill": "$background",
                   "cornerRadius": 70,
-                  "stroke": {
-                    "thickness": 4,
-                    "fill": "$speed-orange"
-                  },
+                  "stroke": "$speed-orange",
+                  "strokeWidth": 4,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "justifyContent": "center",
                   "alignItems": "center",
@@ -7826,10 +7725,9 @@
           "height": 844,
           "fill": "$surface",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "$border-light"
-          },
+          "stroke": "$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -7927,10 +7825,9 @@
                   "width": "fill_container",
                   "fill": "$background",
                   "cornerRadius": 20,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "$primary"
-                  },
+                  "stroke": "$primary",
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 12,
                   "padding": 20,
@@ -8048,10 +7945,9 @@
           "height": 844,
           "fill": "$background",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "$border-light"
-          },
+          "stroke": "$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -8118,10 +8014,9 @@
                   "width": "fill_container",
                   "fill": "$surface",
                   "cornerRadius": 24,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "$primary"
-                  },
+                  "stroke": "$primary",
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": 20,
@@ -8307,10 +8202,9 @@
           "height": 844,
           "fill": "$tertiary-light",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "$tertiary"
-          },
+          "stroke": "$tertiary",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -8371,10 +8265,9 @@
                   "width": "fill_container",
                   "fill": "$surface",
                   "cornerRadius": 20,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "$tertiary"
-                  },
+                  "stroke": "$tertiary",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 12,
                   "padding": 20,
@@ -8447,10 +8340,9 @@
           "height": 844,
           "fill": "$background",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "$border-light"
-          },
+          "stroke": "$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -8505,10 +8397,9 @@
                   "width": "fill_container",
                   "fill": "$secondary-light",
                   "cornerRadius": 16,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "$secondary"
-                  },
+                  "stroke": "$secondary",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "gap": 12,
                   "padding": 16,
                   "alignItems": "center",
@@ -8556,10 +8447,9 @@
                   "width": "fill_container",
                   "fill": "$surface",
                   "cornerRadius": 16,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "$border-light"
-                  },
+                  "stroke": "$border-light",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 8,
                   "padding": 16,
@@ -9072,10 +8962,9 @@
                   "height": 120,
                   "fill": "$surface",
                   "cornerRadius": 16,
-                  "stroke": {
-                    "thickness": 1.5,
-                    "fill": "$border-light"
-                  },
+                  "stroke": "$border-light",
+                  "strokeWidth": 1.5,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 8,
                   "padding": 16,
@@ -9121,12 +9010,12 @@
               "width": "fill_container",
               "height": 80,
               "fill": "$surface",
-              "stroke": {
-                "thickness": {
-                  "top": 1
-                },
-                "fill": "$border-light"
+              "stroke": "$border-light",
+              "strokeWidth": {
+                "top": 1
               },
+              "strokeAlignment": "inner",
+              "strokeLinejoin": "round",
               "padding": [
                 8,
                 16,
@@ -9242,10 +9131,9 @@
           "height": 844,
           "fill": "$background",
           "cornerRadius": 40,
-          "stroke": {
-            "thickness": 2,
-            "fill": "$border-light"
-          },
+          "stroke": "$border-light",
+          "strokeWidth": 2,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "children": [
             {
@@ -9290,10 +9178,9 @@
                   "height": 52,
                   "fill": "$surface",
                   "cornerRadius": 14,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "$border-light"
-                  },
+                  "stroke": "$border-light",
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "padding": [
                     0,
@@ -9319,10 +9206,9 @@
                   "height": 52,
                   "fill": "$surface",
                   "cornerRadius": 14,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "$border-light"
-                  },
+                  "stroke": "$border-light",
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "padding": [
                     0,
@@ -9348,10 +9234,9 @@
                   "height": 52,
                   "fill": "$surface",
                   "cornerRadius": 14,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "$border-light"
-                  },
+                  "stroke": "$border-light",
+                  "strokeWidth": 2,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "padding": [
                     0,
@@ -9736,5 +9621,6 @@
       "type": "color",
       "value": "#E8F7F2"
     }
-  }
+  },
+  "fileToken": "79a0f420-b870-4e47-8f5c-4c35ba4e7207"
 }
